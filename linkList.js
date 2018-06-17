@@ -17,10 +17,10 @@ function LinkList(){
     this.head = newNode;
   }
   
-  let llHead = new LinkList();
-  llHead.addNodeToHead(100);
-  llHead.addNodeToHead(200);
-  console.log('linkList add to head: ', llHead)
+  let ll = new LinkList();
+  ll.addNodeToHead(100);
+  ll.addNodeToHead(200);
+  console.log('linkList add to head: ', ll)
 
   // add to tail
   LinkList.prototype.addNodeToTail = function (value){
@@ -30,7 +30,6 @@ function LinkList(){
     this.tail = newNode;
   }
   
-  let llTail = new LinkList();
-  llTail.addNodeToTail(10);
-  llTail.addNodeToTail(20);
-  console.log('linkList add to tail: ', llTail);
+  ll.addNodeToTail(10);
+  console.log('previous tail: ', ll.tail.prev);
+
