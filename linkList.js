@@ -33,3 +33,27 @@ function LinkList(){
   ll.addNodeToTail(10);
   console.log('previous tail: ', ll.tail.prev);
 
+
+  // remove head
+  LinkList.prototype.removeHead = function () {
+    if(!this.head) return null;
+      const val = this.head.value;
+      this.head = this.head.next;
+      if(this.head) this.head.prev = null;
+      else this.tail = null;
+    return val;
+  }
+  
+  console.log('remove: ', ll.removeHead())
+
+  // remove tail
+  LinkList.prototype.removeTail = function (){
+    if(!this.tail) return null;
+    const val = this.tail.value;
+    this.tail = this.tail.prev;
+    if (this.tail) this.tail.next = null;
+    else this.head = null;
+    return val;
+  }
+  
+  console.log('linkList after calling removeTail: ', ll.removeTail());
