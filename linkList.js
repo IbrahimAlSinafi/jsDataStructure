@@ -42,8 +42,7 @@ function LinkList(){
       if(this.head) this.head.prev = null;
       else this.tail = null;
     return val;
-  }
-  
+  }  
   console.log('remove: ', ll.removeHead())
 
   // remove tail
@@ -55,5 +54,15 @@ function LinkList(){
     else this.head = null;
     return val;
   }
-  
+
   console.log('linkList after calling removeTail: ', ll.removeTail());
+
+  // search value
+  LinkList.prototype.search = function(searchVal) {
+    while(this.head !== null) {
+      if (this.head.value === searchVal) return 'found';
+      this.head = this.head.next;
+    }
+    return null;
+  }
+  console.log(ll.search(100))
